@@ -1,0 +1,42 @@
+.side-bar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 28px;
+    background-color: $color-xlight-grey;
+    box-shadow: $bar-shadow;
+
+    .blue-circle-icon {
+        color: $color-white;
+        background-color: $color-primary-blue;
+    }
+
+    .brand-column {
+        height: 80px;
+    }
+
+    .create-task-tab {
+        padding: 16px;
+        margin-top: 50px;
+        border-radius: 12px;
+        background-color: $color-primary-blue-bg;
+    }
+
+    .user-column {
+        position: absolute;
+        left: 28px;
+        bottom: 40px;
+    }
+
+    .side-bar-avatar {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &.collapsed {
+        width: 80px;
+    }
+}

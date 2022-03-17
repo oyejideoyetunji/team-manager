@@ -1,0 +1,12 @@
+.top-bar {
+    height: 80px;
+
+    .notification-wrp {
+        border-right: 2px solid $color-grey1;
+    }
+
+    .top-bar-avatar {
+        color: $color-white;
+        background-color: $color-dark-blue;
+    }
+}
