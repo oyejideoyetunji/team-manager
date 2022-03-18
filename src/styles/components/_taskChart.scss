@@ -3,8 +3,8 @@
     height: 1000px;
 
     .date-col {
-        min-width: 50px;
         width: calc(100% / 17);
+        min-width: 50px;
         flex-shrink: 0;
 
         .date-cell {
@@ -50,12 +50,14 @@
     .task-row {
         position: absolute;
         height: 80px;
+        width: 100%;
+        min-width: calc(50px * 17);
         z-index: 10;
 
         .user-card-wrapper {
             width: fit-content;
-            padding: 0 12px;
-            height: 55px;
+            padding: 0 18px;
+            height: 60px;
             position: absolute;
             left: 0;
             z-index: 10;
@@ -66,10 +68,30 @@
         }
 
         .progress-bar {
-            height: 35px;
+            height: 40px;
             border-radius: 20px;
+            position: absolute;
+            top: 10px;
 
-            
+            .thumb {
+                height: 100%;
+                border-radius: 20px;
+                padding: 12px;
+
+                .dot-wrp {
+                    width: 25px;
+                    height: 25px;
+                    background-color: $color-white-bg;
+                    border-radius: 100%;
+
+                    .dot {
+                        width: 10px;
+                        height: 10px;
+                        background-color: $color-white;
+                        border-radius: 100%;
+                    }
+                }
+            }
         }
     }
 }

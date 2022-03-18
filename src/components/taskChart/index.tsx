@@ -48,30 +48,33 @@ const TaskChart = () => {
                     />
                 </div>
                 <div
-                    className="progress-bar"
+                    className="progress-bar flex align-center justify-between"
                     style={{
-                        backgroundColor: "",
-                        width: "",
-                        color: ""
+                        backgroundColor: "rgba(57, 205, 204, 0.4)",
+                        width: "calc(100% / 17 * 8)",
+                        color: "#39CDCC",
+                        left: "calc(100% / 17 * 4)"
                     }}
                 >
                     <div
                         className="thumb flex align-center justify-between"
                         style={{
-                            backgroundColor: "",
-                            width: "",
-                            color: "",
+                            backgroundColor: "#39CDCC",
+                            width: "60%",
+                            color: "#ffffff",
                         }}
                     >
                         <div className="flex align-center">
-                            <span className="dot-wrp">
+                            <span className="dot-wrp flex align-center justify-center m-r-12">
                                 <span className="dot"></span>
                             </span>
                             <span></span>
                         </div>
-
-                        <span></span>
                     </div>
+
+                    <span className="font-s-14 font-w-700 m-r-12">
+                        60%
+                    </span>
                 </div>
             </section>
         </section>
