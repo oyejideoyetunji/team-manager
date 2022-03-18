@@ -69,7 +69,13 @@ $cursors: (pointer, default);
 }
 
 
+
+
 // layout 
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
 
 .hide {
     display: none;
@@ -144,14 +150,6 @@ $cursors: (pointer, default);
 
 // typography
 
-.txt-xl-primary {
-    @extend .font-s-24;
-    @extend .font-w-600;
-    color: $color-dark-blue;
-}
-
-
-
 .dark-blue {
     color: $color-dark-blue;
 }
@@ -160,8 +158,16 @@ $cursors: (pointer, default);
     color: $color-grey1;
 }
 
+.grey2 {
+    color: $color-grey2;
+}
+
 .primary-blue {
     color: $color-primary-blue;
+}
+
+.text-center {
+    text-align: center;
 }
 
 
@@ -181,10 +187,14 @@ $cursors: (pointer, default);
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    background-position: center;
+    background-size: cover;
 }
 
 .avatar-small {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    background-position: center;
+    background-size: cover;
 }

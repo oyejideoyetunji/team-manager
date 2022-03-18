@@ -1,0 +1,27 @@
+.base-button {
+    outline: none;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &.plain {
+        background: $color-white;
+        color: $color-grey2;
+    }
+
+    &.dashed {
+        border: 1px dashed $color-grey2;
+    }
+
+    &.round {
+        border-radius: 28px;
+    }
+
+    &.hollow {
+        border: 1px solid $color-grey2;
+    }
+}

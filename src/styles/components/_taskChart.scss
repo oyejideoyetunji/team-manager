@@ -1,0 +1,75 @@
+.task-chart {
+    position: relative;
+    height: 1000px;
+
+    .date-col {
+        min-width: 50px;
+        width: calc(100% / 17);
+        flex-shrink: 0;
+
+        .date-cell {
+            @extend .m-y-28;
+            @extend .p-y-6;
+
+            &.active {
+                background-color: $color-primary-blue;
+                color: $color-white;
+                border-radius: 10px;
+
+                > .active {
+                    color: $color-white;
+                }
+            }
+        }
+
+        .date-bar {
+            border-right: 1px solid $color-grey1;
+            height: 850px;
+
+            .highlight {
+                height: 100%;
+                border: 1px solid $color-primary-blue;
+                position: relative;
+                z-index: 1000;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -15px;
+                    left: -8px;
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: $color-primary-blue;
+                }
+            }
+        }
+    }
+
+    .task-row {
+        position: absolute;
+        height: 80px;
+        z-index: 10;
+
+        .user-card-wrapper {
+            width: fit-content;
+            padding: 0 12px;
+            height: 55px;
+            position: absolute;
+            left: 0;
+            z-index: 10;
+            box-shadow: $card-shadow;
+            border-radius: 8px;
+            border: 1px solid $color-grey1;
+            background-color: $color-white;
+        }
+
+        .progress-bar {
+            height: 35px;
+            border-radius: 20px;
+
+            
+        }
+    }
+}

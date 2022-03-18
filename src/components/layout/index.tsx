@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import SideBar from "../sideBar";
 import TopBar from "../topBar";
 
-const Layout = () => {
+interface LayoutProps  {
+    children: ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
 
     const [currentRoute, setCurrentRoute] = useState("Projects")
 
@@ -11,8 +15,11 @@ const Layout = () => {
 
             <SideBar currentRoute={currentRoute} setRoute={setCurrentRoute} />
 
-            <section className="main-content">
+            <section className="main-content p-l-40 p-r-28">
                 <TopBar currentRoute={currentRoute} />
+                <>
+                    {children}
+                </>
             </section>
         </main>
     )

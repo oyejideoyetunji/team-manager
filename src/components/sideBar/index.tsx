@@ -1,6 +1,7 @@
 import React from "react";
+import images from "../../assets/images";
 import { dashboardRoutes } from "../../lib/routes";
-import demoAvatar from "../../assets/images/demo-avatar.png";
+import UserCard from "../usersCard";
 
 interface SideBarProps {
     setRoute(label: string): void
@@ -70,22 +71,11 @@ const SideBar = ({ setRoute, currentRoute }: SideBarProps) => {
                 </span>
             </div>
 
-            <div
-                className="user-column flex align-center justify-between"
-            >
-                <span className="side-bar-avatar avatar" style={{backgroundImage: `url(${demoAvatar})`}} />
-                <div className="flex flex-col m-x-12">
-                    <span className="font-s-14 dark-blue f-w-700">
-                        Fianna A.
-                    </span>
-                    <span className="font-s-14 grey1 f-w-700">
-                        fianna@gmail.com
-                    </span>
-                </div>
-                <span className="font-s-20 grey1">
-                    <i className="fas fa-angle-up" />
-                </span>
-            </div>
+            <section className="user-column">
+                <UserCard
+                    iconName="fas fa-angle-up"
+                    user={{ name: "Fiana A.", email: "fianna@mail.com", avatarUrl: images.user1 }} />
+            </section>
         </aside>
     )
 }

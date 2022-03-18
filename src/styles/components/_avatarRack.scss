@@ -1,0 +1,15 @@
+.avatar-rack {
+    position: relative;
+    width: 80px;
+
+    .avatar-wrp {
+        position: absolute;
+        border-radius: 100%;
+        border: 1px solid $color-white;
+    }
+
+    .avatar-count {
+        background-color: $color-dark-blue;
+        color: $color-white;
+    }
+}

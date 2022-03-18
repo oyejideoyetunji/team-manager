@@ -7,7 +7,7 @@ interface TopBarProps {
 const TopBar = ({currentRoute}: TopBarProps) => {
     return (
         <section
-            className="top-bar w-100 flex align-center justify-between p-t-28 p-b-22 p-l-32 p-r-22"
+            className="top-bar w-100 flex align-center justify-between"
         >
             <div className="flex align-center">
                 <span className="font-s-16 dark-blue f-w-600 m-r-10">
