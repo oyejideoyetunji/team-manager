@@ -16,7 +16,7 @@ const TopBar = ({currentRoute}: TopBarProps) => {
                 <span className="font-s-18 grey1 m-r-10">
                     <i className="fas fa-angle-right" />
                 </span>
-                <span className="font-s-16 grey1 f-w-700">
+                <span className="font-s-16 grey2 f-w-700">
                     GSE Banking App
                 </span>
             </div>

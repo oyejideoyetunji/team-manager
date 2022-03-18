@@ -14,8 +14,8 @@ const Project = () => {
                     <h2 className="font-s-22 font-w-500 dark-blue">
                         GSE Banking App
                     </h2>
-                    <div className="flex align-center m-y-2">
-                        <span className="font-s-14 font-w-600 grey1">
+                    <div className="flex align-center m-y-4">
+                        <span className="font-s-14 font-w-500 grey2">
                             56%
                         </span>
                     </div>

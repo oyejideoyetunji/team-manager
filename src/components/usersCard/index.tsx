@@ -17,7 +17,7 @@ const UserCard = ({ user, iconName }: UserCardProps) => {
                 <span className="font-s-14 dark-blue f-w-700">
                     {user.name}
                 </span>
-                <span className="font-s-14 grey1 f-w-700">
+                <span className="font-s-14 grey2 f-w-700">
                     {user.email}
                 </span>
             </div>

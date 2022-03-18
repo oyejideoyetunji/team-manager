@@ -18,7 +18,7 @@ const TaskChart = () => {
                                         ? "active" : ""}`
                                 }
                             >
-                                <span className="grey1 font-s-14 font-w-400 active">
+                                <span className="grey2 font-s-14 font-w-400 active">
                                     {date.toDateString().slice(0, 1).toUpperCase()}
                                 </span>
                                 <span className="dark-blue font-s-14 font-w-400 active">

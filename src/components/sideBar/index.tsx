@@ -44,7 +44,7 @@ const SideBar = ({ setRoute, currentRoute }: SideBarProps) => {
                     >
                         <span
                             className={
-                                `m-r-12 font-s-14 ${isCurrentRoute(route.label) ? "primary-blue" : "grey1"}`
+                                `m-r-12 font-s-14 ${isCurrentRoute(route.label) ? "primary-blue" : "grey2"}`
                             }
                         >
                             <i className={route.icon} />
