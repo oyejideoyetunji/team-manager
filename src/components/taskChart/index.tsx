@@ -50,7 +50,7 @@ const TaskChart = () => {
                 <div
                     className="progress-bar flex align-center justify-between"
                     style={{
-                        backgroundColor: "rgba(57, 205, 204, 0.4)",
+                        backgroundColor: "#e3fafa",
                         width: "calc(100% / 17 * 8)",
                         color: "#39CDCC",
                         left: "calc(100% / 17 * 4)"
