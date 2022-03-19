@@ -4,16 +4,17 @@ import { User } from "../../lib/types";
 interface UserCardProps {
     user: User
     iconName: string
+    minimize?: boolean
 }
 
-const UserCard = ({ user, iconName }: UserCardProps) => {
+const UserCard = ({ user, iconName, minimize }: UserCardProps) => {
     
     return (
         <div
             className="flex align-center justify-between"
         >
             <span className="avatar" style={{ backgroundImage: `url(${user.avatarUrl})` }} />
-            <div className="flex flex-col m-x-12">
+            <div className={`flex-col m-x-12 ${minimize ? "hide" : "flex"}`}>
                 <span className="font-s-14 dark-blue f-w-700">
                     {user.name}
                 </span>
@@ -21,7 +22,7 @@ const UserCard = ({ user, iconName }: UserCardProps) => {
                     {user.email}
                 </span>
             </div>
-            <span className="font-s-20 grey2">
+            <span className={`font-s-20 grey2 ${minimize && "hide"}`}>
                 <i className={iconName} />
             </span>
         </div>

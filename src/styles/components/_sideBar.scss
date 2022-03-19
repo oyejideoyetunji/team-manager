@@ -1,4 +1,6 @@
 .side-bar {
+    transition: all 0.3s ease;
+
     width: 250px;
     height: 100vh;
     position: fixed;
@@ -9,6 +11,15 @@
     box-shadow: $bar-shadow;
     border-right: 1px solid $color-light-grey;
 
+    .collapse-hide {
+        display: block;
+        width: 100px;
+    }
+
+    .collapse-transition {
+        transition: all 0.4s ease 0.3s;
+    }
+
     .blue-circle-icon {
         color: $color-white;
         background-color: $color-primary-blue;
@@ -16,13 +27,52 @@
 
     .brand-column {
         height: 80px;
+
+        &.brand-column-cllp {
+            height: 100px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;      
+
+            .collapse-icon {
+                order: 1;
+                margin: 12px 0 18px;
+                border-left: none;
+                border-right: 2px solid $color-grey2;
+            }
+
+            .brand-logo {
+                order: 2;
+                .blue-circle-icon {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .collapse-icon {
+            border-left: 2px solid $color-grey2;
+            border-right: none;
+        }
+    }
+
+    .side-menu-item {
+        transition: opacity 0.3s ease;
+        &:hover:not(.active) {
+            opacity: 0.5;
+        }
     }
 
     .create-task-tab {
+        width: 100%;
+        min-width: fit-content;
         padding: 16px;
         margin-top: 50px;
         border-radius: 12px;
         background-color: $color-primary-blue-bg;
+
+        &.create-task-tab-cllp {
+            padding: 0;
+        }
     }
 
     .user-column {
@@ -33,5 +83,10 @@
 
     &.collapsed {
         width: 80px;
+
+        .collapse-hide {
+            width: 0;
+            overflow: hidden;
+        }
     }
 }

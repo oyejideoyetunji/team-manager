@@ -189,6 +189,7 @@ $cursors: (pointer, default);
     border-radius: 50%;
     background-position: center;
     background-size: cover;
+    flex-shrink: 0;
 }
 
 .avatar-small {
@@ -197,4 +198,5 @@ $cursors: (pointer, default);
     border-radius: 50%;
     background-position: center;
     background-size: cover;
+    flex-shrink: 0;
 }

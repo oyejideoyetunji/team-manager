@@ -9,13 +9,21 @@ interface LayoutProps  {
 const Layout = ({ children }: LayoutProps) => {
 
     const [currentRoute, setCurrentRoute] = useState("Projects")
+    const [collapseSidebar, setCollapseSidebar] = useState(false)
 
     return (
         <main className="w-100 container-layout">
 
-            <SideBar currentRoute={currentRoute} setRoute={setCurrentRoute} />
+            <SideBar
+                currentRoute={currentRoute}
+                setRoute={setCurrentRoute}
+                collapsed={collapseSidebar}
+                onToggleCollapse={() => setCollapseSidebar(!collapseSidebar)}
+            />
 
-            <section className="main-content p-l-40 p-r-28">
+            <section
+                className={`main-content p-l-40 p-r-28 ${collapseSidebar && "expanded"}`}
+            >
                 <TopBar currentRoute={currentRoute} />
                 <>
                     {children}
