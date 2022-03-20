@@ -4,6 +4,7 @@ Live [here](https://team-manager-pi.vercel.app/).
 
 ## Tech stack
 
-Reactjs (with typescript)
+Reactjs (with Typescript)
+
 SCSS
 
