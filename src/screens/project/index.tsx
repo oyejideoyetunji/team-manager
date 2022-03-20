@@ -1,12 +1,35 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Button from "../../components/button"
 import DropDownBtn from "../../components/dropDownBtn"
 import AvatarRack from "../../components/avatarRack"
 import images from "../../assets/images"
 import TaskChart from "../../components/taskChart"
+import { updateTicketsProgress, useCumulativeProgress, useInitWorkTickets } from "../../lib/utils/workTicket";
+import { staffs, taskColorSchemes, tasksTitles } from "../../lib/static";
 
 
 const Project = () => {
+
+    const [initialWorkTickets] = useInitWorkTickets(staffs, tasksTitles, taskColorSchemes)
+
+    const [workTickets, setWorkTickets] = useState(initialWorkTickets)
+    const [cumulativeProgress] = useCumulativeProgress(workTickets)
+
+    useEffect(() => {
+        let isMounted = true
+
+        const x = setInterval(() => {
+            if (isMounted && cumulativeProgress < 100) {
+                setWorkTickets(prevTickets => updateTicketsProgress(prevTickets))
+            }
+        }, 10000)
+
+        return () => {
+            isMounted = false
+            clearInterval(x)
+        }
+    }, [cumulativeProgress])
+
     return (
         <section className="w-100 project-page">
             <section className="w-100 flex align-center justify-between m-y-18">
@@ -16,7 +39,12 @@ const Project = () => {
                     </h2>
                     <div className="flex align-center m-y-4">
                         <span className="font-s-14 font-w-500 grey2">
-                            56%
+                            {`${cumulativeProgress}%`}
+                        </span>
+                        <span className="cumul-progress-bar m-l-8">
+                            <span
+                                style={{ width: `${cumulativeProgress}%`}}
+                            />
                         </span>
                     </div>
                 </section>
@@ -57,7 +85,7 @@ const Project = () => {
                 </div>
             </section>
 
-            <TaskChart />
+            <TaskChart workTickets={workTickets} />
         </section>
     )
 }

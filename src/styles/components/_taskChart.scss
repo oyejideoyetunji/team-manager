@@ -1,6 +1,6 @@
 .task-chart {
     position: relative;
-    height: 1000px;
+    height: 1200px;
 
     .date-col {
         width: calc(100% / 17);
@@ -24,7 +24,7 @@
 
         .date-bar {
             border-right: 1px solid $color-grey1;
-            height: 850px;
+            height: 1000px;
 
             .highlight {
                 height: 100%;
@@ -73,10 +73,27 @@
             position: absolute;
             top: 10px;
 
+            .progress-txt {
+                position: absolute;
+                top: 10px;
+                right: 12px;
+            }
+
             .thumb {
                 height: 100%;
                 border-radius: 20px;
-                padding: 12px;
+                position: absolute;
+                transition: all 0.5s ease;
+
+                & > * {
+                    flex-shrink: 0;
+                }
+
+                .completion-txt {
+                    position: absolute;
+                    top: 10px;
+                    right: 12px;
+                }
 
                 .dot-wrp {
                     width: 25px;

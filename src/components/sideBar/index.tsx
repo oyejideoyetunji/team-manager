@@ -95,7 +95,7 @@ const SideBar = ({ setRoute, currentRoute, collapsed, onToggleCollapse }: SideBa
                 <UserCard
                     minimize={collapsed}
                     iconName="fas fa-angle-up"
-                    user={{ name: "Fiana A.", email: "fianna@mail.com", avatarUrl: images.user1 }}
+                    user={{ name: "Fiana A.", email: "fianna@mail.com", avatarUrl: images.user1, id: 1 }}
                 />
             </section>
         </aside>

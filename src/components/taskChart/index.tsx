@@ -1,10 +1,14 @@
 import React from "react";
 import UserCard from "../usersCard";
-import images from "../../assets/images";
 import { getNineDaysBeforeAndSevenDaysAfterDate } from "../../lib/utils/dateTime";
+import { WorkTicket } from "../../lib/types";
 
+interface TaskChartProps {
+    workTickets: WorkTicket[]
+}
 
-const TaskChart = () => {
+const TaskChart = ({ workTickets }: TaskChartProps) => {
+
     return (
         <section className="task-chart w-100 m-y-18 p-y-32 overflow-x-auto">
             <section className="w-100 flex align-center">
@@ -35,48 +39,64 @@ const TaskChart = () => {
                 }
             </section>
 
-            <section
-                className="task-row"
-                style={{ top: `${110}px` }}
-            >
-                <div
-                    className="user-card-wrapper flex align-center"
-                >
-                    <UserCard
-                        iconName="fas fa-ellipsis-v"
-                        user={{ name: "Fiana A.", email: "fianna@mail.com", avatarUrl: images.user4 }}
-                    />
-                </div>
-                <div
-                    className="progress-bar flex align-center justify-between"
-                    style={{
-                        backgroundColor: "#e3fafa",
-                        width: "calc(100% / 17 * 8)",
-                        color: "#39CDCC",
-                        left: "calc(100% / 17 * 4)"
-                    }}
-                >
-                    <div
-                        className="thumb flex align-center justify-between"
-                        style={{
-                            backgroundColor: "#39CDCC",
-                            width: "60%",
-                            color: "#ffffff",
-                        }}
+            {
+                workTickets.map(({ staff, task }, idx) => (
+                    <section
+                        key={staff.id}
+                        className="task-row"
+                        style={{ top: `${100 * (idx + 1)}px` }}
                     >
-                        <div className="flex align-center">
-                            <span className="dot-wrp flex align-center justify-center m-r-12">
-                                <span className="dot"></span>
-                            </span>
-                            <span></span>
+                        <div
+                            className="user-card-wrapper flex align-center"
+                        >
+                            <UserCard
+                                iconName="fas fa-ellipsis-v"
+                                user={staff}
+                            />
                         </div>
-                    </div>
+                        <div
+                            className="progress-bar flex align-center"
+                            style={{
+                                backgroundColor: task.colorScheme.light,
+                                width: `calc(100% / 17 * ${task.durationInDays})`,
+                                color: task.colorScheme.dark,
+                                left: `calc(100% / 17 * ${task.startDayIndex})`
+                            }}
+                        >
+                            <div
+                                className="thumb flex align-center"
+                                style={{
+                                    backgroundColor: task.colorScheme.dark,
+                                    width: `${task.progressInPercent}%`,
+                                    color: "#ffffff",
+                                }}
+                            >
+                                <div className="flex align-center m-x-12">
+                                    <span className="dot-wrp flex align-center justify-center">
+                                        <span className="dot"></span>
+                                    </span>
+                                </div>
+                                <span className="title-txt font-s-14 font-w-700">
+                                    {task.title}
+                                </span>
+                                {task.progressInPercent >= 90 && (
+                                    <span className="completion-txt font-s-14 font-w-700">
+                                        {`${task.progressInPercent}%`}
+                                    </span>
+                                )}
 
-                    <span className="font-s-14 font-w-700 m-r-12">
-                        60%
-                    </span>
-                </div>
-            </section>
+                            </div>
+
+                            {task.progressInPercent < 90 && (
+                                <span className="progress-txt font-s-14 font-w-700">
+                                    {`${task.progressInPercent}%`}
+                                </span>
+                            )}
+                        </div>
+                    </section>
+                ))
+            }
+
         </section>
     )
 }

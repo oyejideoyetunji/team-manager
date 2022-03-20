@@ -65,6 +65,7 @@
     .create-task-tab {
         width: 100%;
         min-width: fit-content;
+        height: fit-content;
         padding: 16px;
         margin-top: 50px;
         border-radius: 12px;
@@ -72,6 +73,7 @@
 
         &.create-task-tab-cllp {
             padding: 0;
+            height: 0;
         }
     }
 

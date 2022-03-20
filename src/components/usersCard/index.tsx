@@ -5,9 +5,10 @@ interface UserCardProps {
     user: User
     iconName: string
     minimize?: boolean
+    staffMode?: boolean
 }
 
-const UserCard = ({ user, iconName, minimize }: UserCardProps) => {
+const UserCard = ({ user, iconName, minimize, staffMode }: UserCardProps) => {
     
     return (
         <div
@@ -19,7 +20,7 @@ const UserCard = ({ user, iconName, minimize }: UserCardProps) => {
                     {user.name}
                 </span>
                 <span className="font-s-14 grey2 f-w-700">
-                    {user.email}
+                    {staffMode ? user.role : user.email}
                 </span>
             </div>
             <span className={`font-s-20 grey2 ${minimize && "hide"}`}>
